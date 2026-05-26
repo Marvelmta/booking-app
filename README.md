@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# Booking App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive **Booking App** built with **React** and **TypeScript**.  
+The app allows users to create bookings with name, email, and date selection, while handling validation, duplicate bookings, and preventing past-date reservations.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Functions
 
-## React Compiler
+**Create booking** – Users can create a booking by entering:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Name
+- Email
+- Date
 
-## Expanding the ESLint configuration
+**Form validation**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Validates that name is not empty
+- Validates correct email format
+- Prevents booking with past dates
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**Duplicate booking prevention**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Prevents booking the same email on the same date
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Booking list**
+
+- Displays all created bookings
+- Shows name, email, and selected date
+- Allows deletion of bookings
+
+---
+
+## Tech Stack
+
+**Built with:**
+- React   
+- TypeScript  
+- TailwindCSS
+
+---
+
+## Installation
+
+```bash
+# Clone the project
+git clone https://github.com/Marvelmta/booking-app.git
+
+# Go into the project folder
+cd bokning
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Project Structure 
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+/src
+├── components/
+│   ├── BokningForm.tsx
+│   └── BokingLista.tsx
+├── App.tsx
+└── index.css
+└── main.tsx
+```
+---
+
+## Screenshots
+
+### Home Page
+![Home Page](/src/assets/homepage.png)
+
+### Country Page
+![Validation](/src/assets/validation.png)
+
+
+
