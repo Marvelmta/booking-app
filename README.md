@@ -76,7 +76,7 @@ npm run dev
 ### Home Page
 ![Home Page](/src/assets/homepage.png)
 
-### Country Page
+### Validation
 ![Validation](/src/assets/validation.png)
 
 
